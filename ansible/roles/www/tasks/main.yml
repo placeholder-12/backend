@@ -1,5 +1,9 @@
 - name: install dependencies
-  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=36000
+  apt: pkg={{ item }} state=present update_cache=yes cache_valid_time=36000
   with_items:
     - vim
     - nginx
+
+- include: create_users_and_groups.yml
+- include: create_directories.yml
+- include: setup_nginx.yml

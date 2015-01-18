@@ -5,3 +5,5 @@
       - www
   vars:
       deploy_mode: devel
+      application_name: backend
+      domain: localhost
