@@ -1,0 +1,5 @@
+- name: install dependencies
+  apt: pkg={{item}} state=present update_cache=yes cache_valid_time=36000
+  with_items:
+    - vim
+    - nginx
