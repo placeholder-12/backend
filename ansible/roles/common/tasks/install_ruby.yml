@@ -1,0 +1,10 @@
+---
+
+- name: Setup repository for ruby2.2
+  apt_repository: repo='ppa:brightbox/ruby-ng'
+
+- name: Install ruby
+  apt: pkg={{item}}
+  with_items:
+    - ruby2.2
+    - ruby2.2-dev
