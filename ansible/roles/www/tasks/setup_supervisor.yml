@@ -1,0 +1,9 @@
+- name: Create the Supervisor config file
+  template: src=etc/supervisor/supervisor_config.j2
+            dest=/etc/supervisor/conf.d/fetcher.conf
+
+- name: reload supervisor
+  command: supervisorctl reread
+
+- name: enable service supervisor
+  service: name=supervisor state=restarted enabled=yes

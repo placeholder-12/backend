@@ -1,0 +1,6 @@
+[program:fetcher]
+command = python fetcher.py
+directory = /repoman/
+user = {{ application_user }}
+stdout_logfile = {{ fetcher_log_file }}
+redirect_stderr = true
