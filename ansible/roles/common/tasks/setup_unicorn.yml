@@ -1,0 +1,12 @@
+---
+
+- name: Install unicorn
+  gem: name={{item}}
+  sudo_user: vagrant
+  with_items:
+    - unicorn
+    - bundler
+
+- name: Add gem executables to PATH
+  file: state=link src=~/.gem/ruby/2.2.0/bin dest=~/bin
+  sudo_user: vagrant
