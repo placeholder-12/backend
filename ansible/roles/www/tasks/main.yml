@@ -3,6 +3,13 @@
   with_items:
     - vim
     - nginx
+    - rabbitmq-server
+
+- name: enable service nginx
+  service: name=nginx state=started enabled=yes
+
+- name: enable service rabbitmq
+  service: name=rabbitmq-server state=started enabled=yes
 
 - include: create_users_and_groups.yml
 - include: create_directories.yml
